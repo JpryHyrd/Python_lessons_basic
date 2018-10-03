@@ -5,6 +5,10 @@ equation = 'y = -12x + 11111140.2121'
 x = 2.5
 # вычислите и выведите y
 
+x = 2.5
+y = -12 * x + 11111140.2121
+print(y)
+
 
 # Задание-2: Дата задана в виде строки формата 'dd.mm.yyyy'.
 # Проверить, корректно ли введена дата.
@@ -23,6 +27,53 @@ date = '01.11.1985'
 date = '01.22.1001'
 date = '1.12.1001'
 date = '-2.10.3001'
+
+date = input("Введите дату(Коректный пример - \"01.01.1911\"): ")
+date = date.split(".")
+a = None
+while True:
+	if len(date[0]) == 2 and int(date[0]) > 0:
+		if date[1] == "01" and date[0] <= "31":
+			a = 1
+		elif date[1] == "02" and date[0] <= "28":
+			a = 1 
+		elif date[1] == "03" and date[0] <= "31":
+			a = 1
+		elif date[1] == "04" and date[0] <= "30":
+			a = 1
+		elif date[1] == "05" and date[0] <= "31":
+			a = 1
+		elif date[1] == "06" and date[0] <= "30":
+			a = 1
+		elif date[1] == "07" and date[0] <= "31":
+			a = 1
+		elif date[1] == "08" and date[0] <= "31":
+			a = 1
+		elif date[1] == "09" and date[0] <= "30":
+			a = 1
+		elif date[1] == "10" and date[0] <= "31":
+			a = 1
+		elif date[1] == "11" and date[0] <= "30":
+			a = 1
+		elif date[1] == "12" and date[0] <= "31":
+			a = 1
+		else:
+			print("Вы допустили ошибку при вводе даты, повторите попытку снова!")
+			break
+		if a == 1:
+			if len(date[1]) == 2 and int(date[1]) > 0 and int(date[1]) < 13:
+				if len(date[2]) == 4 and int(date[2]) > 0 and int(date[2]) < 9999:
+					print("Дата введена коректно!")
+					break
+				else:
+					print("Вы допустили ошибку при вводе даты, повторите попытку снова!")
+					break
+			else:
+				print("Вы допустили ошибку при вводе даты, повторите попытку снова!")
+				break
+	else:
+		print("Вы допустили ошибку при вводе даты, повторите попытку снова!")	
+		break
 
 
 # Задание-3: "Перевёрнутая башня" (Задача олимпиадного уровня)
